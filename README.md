@@ -18,13 +18,13 @@ Column Classes
 
 Column classes are output using the `[genesis_column][/genesis_column]` shortcode and the class is set by defining the appropriate size. Additionally, the first column in a row will require the addition of a position attribute which looks like this `position="first"`.
 
-**Example**
+**Example**  
 Shortcodes used to display a two-column layout both columns being half width. 
 
-`[genesis_column size="one-half" position="first"]`
-Sample Content
-`[/genesis_column]`
-`[genesis_column size="one-half"]`
-Sample Content
+`[genesis_column size="one-half" position="first"]`  
+Sample Content  
+`[/genesis_column]`  
+`[genesis_column size="one-half"]`  
+Sample Content  
 `[/genesis_column]`
 
