@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       GingerBeard Genesis Shortcodes
- * Plugin URI:        http://github.com/BeardedGinger/genesis-shortcodes
+ * Plugin URI:        http://github.com/BeardedGinger/Genesis-Shortcodes
  * Description:       Adds basic shortcodes for columns that output the included column classes found in the Genesis Framework
  * Version:           1.0.0
  * Author:            Josh Mallard
@@ -10,7 +10,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * GitHub Plugin URI: http://github.com/BeardedGinger/genesis-shortcodes
+ * GitHub Plugin URI: http://github.com/BeardedGinger/Genesis-Shortcodes
  */
 
 // If this file is called directly, abort.
