@@ -41,9 +41,6 @@ class GingerBeard_Genesis_Shortcodes {
 	 */
 	private function __construct() {
 
-		// Load plugin text domain
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-
 		add_action( 'init', array( $this, 'gingerbeard_genesis_shortcodes' ) );
 	}
 
