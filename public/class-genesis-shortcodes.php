@@ -23,7 +23,7 @@ class GingerBeard_Genesis_Shortcodes {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'gingerbeard';
+	protected $plugin_slug = 'gingerbeard-shortcodes';
 
 	/**
 	 * Instance of this class.

@@ -6,7 +6,7 @@
  * Version:           1.0.0
  * Author:            Josh Mallard
  * Author URI:        http://joshmallard.com
- * Text Domain:       gingerbeard
+ * Text Domain:       gingerbeard-shortcodes
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
