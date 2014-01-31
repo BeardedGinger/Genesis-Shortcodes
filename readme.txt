@@ -51,11 +51,16 @@ Speak up in the forum if you think this is a good idea and if you have any ideas
 
 == Screenshots ==
 
+1. Button added to the WYSIWYG
+
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial Commit
 
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+* Because this plugin is awesome and you love the Genesis Framework
