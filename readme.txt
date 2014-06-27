@@ -3,8 +3,8 @@ Contributors: joshlimecuda
 Donate link: http://joshmallard.com
 Tags: shortcodes, genesis
 Requires at least: 3.5.1
-Tested up to: 3.8.1
-Stable tag: 1.0.0
+Tested up to: 3.9.1
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,10 @@ Speak up in the forum if you think this is a good idea and if you have any ideas
 
 
 == Changelog ==
+
+= 1.0.1 =
+* Updated for WordPress 3.9 tinyMCE upgrade
+* Removed unneeded “fifths” from column options
 
 = 1.0.0 =
 * Initial Commit
