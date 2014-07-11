@@ -71,7 +71,7 @@ class GingerBeard_Genesis_Shortcodes {
 
 		return self::$instance;
 	}
-	
+
 	/**
 	 *Genesis Shortcodes Build
 	 *
@@ -83,17 +83,17 @@ class GingerBeard_Genesis_Shortcodes {
         	'position' => ''
         	),
     	$atts, 'genesis_column' ) );
-    	
+
     	$genesis_column_atts = $size;
-    	
+
     	if ( $position == 'first' ) {
     		$genesis_column_atts .= ' first';
     	}
-    	
+
     	$genesis_column = '<div class="'.$genesis_column_atts.'">'.do_shortcode($content).'</div>';
-    	
-    	return $genesis_column;
-	
+
+    	return wpautop($genesis_column);
+
 	}
 	/**
 	 * Genesis Shortcodes
