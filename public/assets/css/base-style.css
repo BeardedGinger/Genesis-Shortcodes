@@ -1,0 +1,29 @@
+/**
+ * Clear shortcode styles
+ */
+
+.clear {
+	clear: both;
+}
+
+/**
+ * Toggle shortcode styles
+ */
+
+.gb-toggle-trigger::before {
+	content: "\002B ";
+	margin-right: 10px;
+}
+
+	.gb-toggle-trigger.active::before {
+		content: "\002d ";
+		margin-right: 15px;
+	}
+
+.gb-toggle-trigger:hover {
+	cursor: pointer;
+}
+
+.gb-toggle-content {
+	display: none;
+}

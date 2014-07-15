@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin class for the administrative views of the Genesis Shortcode plugin
+ * Plugin class to register the TinyMCE button and
  *
  */
-class GingerBeard_Genesis_Shortcodes_Admin {
+class GB_Shortcodes_Admin_Features {
 
 	/**
 	 * Instance of this class.
@@ -23,7 +23,6 @@ class GingerBeard_Genesis_Shortcodes_Admin {
 	private function __construct() {
 
 		$plugin = Gingerbeard_Genesis_Shortcodes::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
 
 		add_action( 'admin_notices', array( $this, 'genesis_shortcodes_admin_notice' ) );
 		add_action( 'admin_notices', array( $this, 'genesis_shortcodes_dismissed_notice' ) );
@@ -54,6 +53,7 @@ class GingerBeard_Genesis_Shortcodes_Admin {
 	 * Admin notice
 	 *
 	 * @since    1.0.0
+	 * @return	 string
 	 */
 	public function genesis_shortcodes_admin_notice() {
 
@@ -94,8 +94,7 @@ class GingerBeard_Genesis_Shortcodes_Admin {
 	}
 
 	/**
-	 *
-	 *
+	 * Add the shortcode button to the TinyMCE
 	 */
 	public function add_genesis_shortcode_generator_button() {
 
@@ -109,9 +108,7 @@ class GingerBeard_Genesis_Shortcodes_Admin {
 		}
 	}
 	/**
-	 *
-	 *
-	 *
+	 * Get the Javascript for the TinyMCE button
 	 */
 	public function add_shortcode_button_js($plugin_array) {
 		$plugin_array['genesis_shortcodes'] = plugins_url( 'assets/js/admin.js', __FILE__ );
@@ -119,9 +116,7 @@ class GingerBeard_Genesis_Shortcodes_Admin {
 	}
 
 	/**
-	 *
-	 *
-	 *
+	 * Add the button to the mce_buttons array
 	 */
 	public function genesis_shortcode_button($buttons) {
 		array_push($buttons, "genesis_shortcodes");
