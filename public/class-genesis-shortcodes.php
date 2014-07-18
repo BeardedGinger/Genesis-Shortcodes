@@ -54,6 +54,8 @@ class GingerBeard_Genesis_Shortcodes {
 
 		// Get that there shortcode stylin'
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+
+		remove_filter('the_content', 'wpautop');
 	}
 
 	/**
@@ -94,6 +96,61 @@ class GingerBeard_Genesis_Shortcodes {
 	}
 
 	/**
+	 * Build Accordion Shortcode Wrapper
+	 *
+	 * @since 2.0.0
+	 */
+	public function accordion_shortcode_wrapper( $atts, $content = 'null' ) {
+		ob_start();
+
+		// Load necessary scripts only when shortcode is used
+		wp_enqueue_script( 'jquery-ui-accordion' );
+		wp_enqueue_script( 'gb-accordion', plugins_url( 'assets/js/accordion.js', __FILE__ ), array('jquery'), 1.0, true );
+		?>
+
+		<div class="gb-accordion">
+			<?php echo do_shortcode($content); ?>
+		</div>
+
+		<?php
+		$gb_accordion_wrapper = ob_get_clean();
+		return $gb_accordion_wrapper;
+	}
+
+	/**
+	 * Build Accordion Shortcode Sections
+	 *
+	 * @since 2.0.0
+	 */
+	public function accordion_shortcode_section( $atts, $content = 'null' ) {
+		extract( shortcode_atts( array(
+			'title' => '',
+			'wrapper' => 'h4'
+			),
+		$atts, 'gb_accordion_section' ) );
+
+		ob_start();
+
+		if( in_array( $wrapper, $this->allowed_wrappers ) )	{
+			$wrapper = $wrapper;
+		} else {
+			$wrapper = 'h4';
+		}
+		?>
+			<<?php echo $wrapper; ?> class="gb-accordion-trigger"><?php echo $title; ?></<?php echo $wrapper;?>>
+			<div class="gb-accordion-content">
+				<?php
+					do_action( 'gb_before_accordion_content');
+					echo do_shortcode($content);
+					do_action( 'gb_after_accordion_content' );
+				?>
+			</div>
+		<?php
+		$gb_accordion_section = ob_get_clean();
+		return str_replace( '<p></p>', '', $gb_accordion_section );
+	}
+
+	/**
 	 * Build Clear Shortcode
 	 *
 	 * @since 2.0.0
@@ -129,6 +186,15 @@ class GingerBeard_Genesis_Shortcodes {
 	}
 
 	/**
+	 * Build Tabs Shortcode
+	 *
+	 * @since 2.0.0
+	 */
+	public function tabs_shortcode() {
+
+	}
+
+	/**
 	 * Build Toggle Shortcode
 	 *
 	 * @since	2.0.0
@@ -138,7 +204,7 @@ class GingerBeard_Genesis_Shortcodes {
 			'title' => '',
 			'wrapper' => 'h4'
 		),
-		$atts, 'genesis_toggle' ) );
+		$atts, 'gb_toggle' ) );
 
 		ob_start();
 
@@ -177,9 +243,11 @@ class GingerBeard_Genesis_Shortcodes {
 	 * @since    1.0.0
 	 */
 	public function gingerbeard_genesis_shortcodes() {
+		add_shortcode('gb_accordion_wrapper', array( $this, 'accordion_shortcode_wrapper' ) );
+		add_shortcode('gb_accordion_section', array( $this, 'accordion_shortcode_section' ) );
 		add_shortcode('clear', array( $this, 'clear_shortcode' ) );
 		add_shortcode('genesis_column', array( $this, 'columns_shortcode' ) );
-		add_shortcode('genesis_toggle', array( $this, 'toggle_shortcode' ) );
+		add_shortcode('gb_toggle', array( $this, 'toggle_shortcode' ) );
 	}
 
 }

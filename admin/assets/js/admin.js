@@ -64,6 +64,23 @@
 					]
 				},
 				{
+					text: 'Accordion',
+					menu: [
+						{
+							text: 'Accordion Wrapper',
+							onclick: function() {
+								editor.insertContent('[gb_accordion_wrapper]Add Accordion Sections here[/gb_accordion_wrapper]');
+							}
+						},
+						{
+							text: 'Accordion Section',
+							onclick: function() {
+								editor.insertContent('[gb_accordion_section title="Accordion Section"]Accordion Content[/gb_accordion_section]');
+							}
+						}
+					]
+				},
+				{
 					text: 'Columns',
 					menu: [
 						{
@@ -133,68 +150,26 @@
 							}
 						},
 					]
-				}
+				},
+				{
+					text: 'Clear',
+					onclick: function() {
+						editor.insertContent('[clear]');
+					}
+				},
+				{
+					text: 'Toggle',
+					onclick: function() {
+						editor.insertContent('[gb_toggle title="Toggle Title" wrapper="h4"]Content to be toggled[/gb_toggle]');
+					}
+				},
+				{
+					text: 'Documentation / Help',
+					onclick: function() {
+						window.open ('http://joshmallard.com', 'blank');
+					}
+				},
 			]
 		});
 	});
 }) ();
-
-
-/*(function ( $ ) {
-
-
-					// Columns
-					c = b.addMenu({title:"Columns"});
-
-						a.render( c, "One Half", "half" );
-						a.render( c, "One Third", "third" );
-						a.render( c, "One Fourth", "fourth" );
-						a.render( c, "One Sixth", "sixth" )
-
-						c.addSeparator();
-
-						a.render( c, "Two Thirds", "twothird" );
-						a.render( c, "Three Fourths", "threefourth" );
-						a.render( c, "Five Sixths", "fivesixth" );
-
-
-					// Columns
-					if(id == "half") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="one-half" position="first"]Sample Content[/genesis_column]');
-					}
-					if(id == "third") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="one-third" position="first"]Sample Content[/genesis_column]');
-					}
-					if(id == "fourth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="one-fourth" position="first"]Sample Content[/genesis_column]');
-					}
-					if(id == "sixth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="one-sixth" position="first"]Sample Content[/genesis_column]');
-					}
-					if(id == "twothird") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="two-thirds"]Sample Content[/genesis_column]');
-					}
-					if(id == "threefourth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="three-fourths"]Sample Content[/genesis_column]');
-					}
-					if(id == "threefifth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="three-fifths"]Sample Content[/genesis_column]');
-					}
-					if(id == "fourfifth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="four-fifths"]Sample Content[/genesis_column]');
-					}
-					if(id == "fivesixth") {
-						tinyMCE.activeEditor.selection.setContent('[genesis_column size="five-sixths"]Sample Content[/genesis_column]');
-					}
-					return false;
-				}
-			})
-		}
-
-	});
-	tinymce.PluginManager.add("genesis_shortcodes", tinymce.plugins.GenesisShortcodeMce);
-
-	});
-
-}(jQuery));
-*/

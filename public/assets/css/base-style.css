@@ -1,5 +1,42 @@
 /**
- * Clear shortcode styles
+ * Accordions
+ */
+.gb-accordion {
+	clear: both;
+}
+
+.gb-accordion-trigger {
+	background: #eee;
+	margin: 0;
+	padding: 10px 10px 10px 15px;
+}
+
+.gb-accordion-trigger:focus {
+	outline: 0;
+}
+
+.gb-accordion-trigger::before {
+	content: "\002B ";
+	margin-right: 10px;
+}
+
+	.ui-accordion-header-active::before {
+		content: "\002d ";
+		margin-right: 15px;
+	}
+
+.gb-accordion-trigger:hover {
+	cursor: pointer;
+}
+
+.gb-accordion-content {
+	background: #f9f9f9;
+	padding: 20px;
+}
+
+
+/**
+ * Clear
  */
 
 .clear {
@@ -7,8 +44,12 @@
 }
 
 /**
- * Toggle shortcode styles
+ * Toggles
  */
+
+.gb-toggle {
+	clear: both;
+}
 
 .gb-toggle-trigger::before {
 	content: "\002B ";

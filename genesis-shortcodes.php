@@ -34,9 +34,5 @@ if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-admin-features.php' );
 	add_action( 'plugins_loaded', array( 'GB_Shortcodes_Admin_Features', 'get_instance' ) );
 
-	if( class_exists( 'Genesis_Admin_Boxes' ) ) {
-		require_once( plugin_dir_path( __FILE__ ) . 'admin/class-admin-page.png' );
-	}
-
 }
 
