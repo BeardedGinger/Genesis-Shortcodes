@@ -55,7 +55,6 @@ class GingerBeard_Genesis_Shortcodes {
 		// Get that there shortcode stylin'
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
-		remove_filter('the_content', 'wpautop');
 	}
 
 	/**
@@ -186,12 +185,57 @@ class GingerBeard_Genesis_Shortcodes {
 	}
 
 	/**
-	 * Build Tabs Shortcode
+	 * Build Tabs Shortcode Wrapper
 	 *
 	 * @since 2.0.0
 	 */
-	public function tabs_shortcode() {
+	public function tabs_shortcode_wrapper( $atts, $content = 'null' ) {
+		ob_start();
 
+		// Load necessary scripts only when shortcode is used
+		wp_enqueue_script( 'jquery-ui-tabs' );
+		wp_enqueue_script( 'gb-tabs', plugins_url( 'assets/js/tabs.js', __FILE__ ), array('jquery'), 1.0, true );
+		?>
+
+		<div class="gb-tabs">
+			<ul class="tab-labels">
+			</ul>
+			<?php echo do_shortcode($content); ?>
+		</div>
+
+		<?php
+		$gb_tabs_wrapper = ob_get_clean();
+		return $gb_tabs_wrapper;
+	}
+
+	/**
+	 * Build Tabs Shortcode Section
+	 *
+	 * @since 2.0.0
+	 */
+	public function tabs_shortcode_section( $atts, $content = 'null' ) {
+		extract( shortcode_atts( array(
+			'title' => '',
+		),
+		$atts, 'gb_tab_section' ) );
+
+		$tab_id = preg_replace('/\s/', '-', $title );
+		$tab_id = strtolower($tab_id);
+
+		ob_start(); ?>
+
+			<li class="tab"><a href="#<?php echo $tab_id;?>"><?php echo $title;?></a></li>
+			<div id="<?php echo $tab_id;?>" class="gb-tab-content">
+				<?php
+					do_action( 'gb_before_tab_content');
+					echo do_shortcode($content);
+					do_action( 'gb_after_tab_content' );
+				?>
+			</div>
+
+		<?php
+		$genesis_tab_section = ob_get_clean();
+		return $genesis_tab_section;
 	}
 
 	/**
@@ -247,6 +291,8 @@ class GingerBeard_Genesis_Shortcodes {
 		add_shortcode('gb_accordion_section', array( $this, 'accordion_shortcode_section' ) );
 		add_shortcode('clear', array( $this, 'clear_shortcode' ) );
 		add_shortcode('genesis_column', array( $this, 'columns_shortcode' ) );
+		add_shortcode('gb_tabs_wrapper', array( $this, 'tabs_shortcode_wrapper' ) );
+		add_shortcode('gb_tab', array( $this, 'tabs_shortcode_section' ) );
 		add_shortcode('gb_toggle', array( $this, 'toggle_shortcode' ) );
 	}
 
