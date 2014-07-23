@@ -163,7 +163,7 @@
 						{
 							text: 'Tabs Wrapper',
 							onclick: function() {
-								editor.insertContent('[gb_tab_wrapper]Add Tabs here[/gb_tab_wrapper]');
+								editor.insertContent('[gb_tabs_wrapper]Add Tabs here[/gb_tabs_wrapper]');
 							}
 						},
 						{
