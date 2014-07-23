@@ -158,6 +158,23 @@
 					}
 				},
 				{
+					text: 'Tabs',
+					menu: [
+						{
+							text: 'Tabs Wrapper',
+							onclick: function() {
+								editor.insertContent('[gb_tab_wrapper]Add Tabs here[/gb_tab_wrapper]');
+							}
+						},
+						{
+							text: 'Tab',
+							onclick: function() {
+								editor.insertContent('[gb_tab title="Tab1"]Tab Content[/gb_tab]');
+							}
+						}
+					]
+				},
+				{
 					text: 'Toggle',
 					onclick: function() {
 						editor.insertContent('[gb_toggle title="Toggle Title" wrapper="h4"]Content to be toggled[/gb_toggle]');
