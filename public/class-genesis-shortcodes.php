@@ -104,7 +104,7 @@ class GingerBeard_Genesis_Shortcodes {
 	 * @link 	https://gist.github.com/bitfade/4555047
 	 * @since	1.1.0
 	 */
-	public function remove_empty_tags() {
+	public function remove_empty_tags( $content ) {
 		// array of custom shortcodes requiring the fix
 		$block = join("|",array('genesis_column'));
 
