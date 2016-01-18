@@ -12,7 +12,7 @@ class GingerBeard_Genesis_Shortcodes {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.1.0';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
@@ -42,6 +42,8 @@ class GingerBeard_Genesis_Shortcodes {
 	private function __construct() {
 
 		add_action( 'init', array( $this, 'gingerbeard_genesis_shortcodes' ) );
+
+		add_filter( 'the_content', array( $this, 'remove_empty_tags' ) );
 	}
 
 	/**
@@ -95,6 +97,26 @@ class GingerBeard_Genesis_Shortcodes {
     	return wpautop($genesis_column);
 
 	}
+
+	/**
+	 * Remove unwanted empty <p></p> from custom shortcodes
+	 *
+	 * @link 	https://gist.github.com/bitfade/4555047
+	 * @since	1.1.0
+	 */
+	public function remove_empty_tags() {
+		// array of custom shortcodes requiring the fix
+		$block = join("|",array('genesis_column'));
+
+		// opening tag
+		$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
+
+		// closing tag
+		$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
+
+		return $rep;
+	}
+
 	/**
 	 * Genesis Shortcodes
 	 *
