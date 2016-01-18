@@ -1,14 +1,14 @@
-=== Genesis Shortcode Generator ===
+=== GingerBeard Shortcodes ===
 Contributors: joshlimecuda
 Donate link: http://joshmallard.com
 Tags: shortcodes, genesis
 Requires at least: 3.5.1
-Tested up to: 3.9.1
-Stable tag: 1.0.1
+Tested up to: 4.4.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Genesis Shortcode Generator allows you to quickly add any default Genesis shortcodes as well as column shortcodes from your WYSIWYG
+The GingerBeard Shortcodes plugin allows you to quickly add any default Genesis shortcodes as well as column shortcodes from your WYSIWYG
 
 == Description ==
 
@@ -17,12 +17,6 @@ This plugin adds a button to your WYSIWYG, allowing for quick addition of defaul
 **Note**
 
 The columns shortcodes require that the first column in the series contains a `position=“first”` within the shortcode.
-
-**Possible Additions**
-
-I’m typically not a fan of shortcodes but I do see the benefit for end-users. I’m considering adding other typical shortcodes to this plugin such as toggles, tabs, callouts, etc. 
-
-Speak up in the forum if you think this is a good idea and if you have any ideas of other “regular” shortcodes that should be added. 
 
 == Installation ==
 
@@ -55,6 +49,9 @@ Speak up in the forum if you think this is a good idea and if you have any ideas
 
 
 == Changelog ==
+
+= 1.1.0 =
+* Filter to remove unwanted empty <p></p> tags within shortcodes
 
 = 1.0.1 =
 * Updated for WordPress 3.9 tinyMCE upgrade
