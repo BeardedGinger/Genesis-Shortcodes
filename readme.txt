@@ -4,7 +4,7 @@ Donate link: http://joshmallard.com
 Tags: shortcodes, genesis
 Requires at least: 3.5.1
 Tested up to: 4.4.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ The columns shortcodes require that the first column in the series contains a `p
 
 
 == Changelog ==
+
+= 1.1.1 =
+* Fix missing $content parameter
 
 = 1.1.0 =
 * Filter to remove unwanted empty <p></p> tags within shortcodes

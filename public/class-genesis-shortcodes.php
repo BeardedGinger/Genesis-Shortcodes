@@ -12,7 +12,7 @@ class GingerBeard_Genesis_Shortcodes {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.1.0';
+	const VERSION = '1.1.1';
 
 	/**
 	 * The variable name is used as the text domain when internationalizing strings
