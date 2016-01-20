@@ -105,7 +105,7 @@ class GingerBeard_Genesis_Shortcodes {
 	 */
 	public function clear_shortcode_build() {
 
-		$clear = '<span style="clear:both"></span>';
+		$clear = '<div class="gb-clear" style="clear:both"></div>';
 
 		return $clear;
 	}

@@ -133,6 +133,17 @@
 							}
 						},
 					]
+				},
+				{
+					text: 'Layout',
+					menu: [
+						{
+							text: 'Clear',
+							onclick: function() {
+								editor.insertContent('[gb_clear]');
+							}
+						}
+					]
 				}
 			]
 		});
