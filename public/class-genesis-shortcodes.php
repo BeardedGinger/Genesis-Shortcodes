@@ -75,7 +75,7 @@ class GingerBeard_Genesis_Shortcodes {
 	}
 
 	/**
-	 *Genesis Shortcodes Build
+	 * Genesis Columns Shortcodes Build
 	 *
 	 * @since    1.0.0
 	 */
@@ -94,8 +94,20 @@ class GingerBeard_Genesis_Shortcodes {
 
     	$genesis_column = '<div class="'.$genesis_column_atts.'">'.do_shortcode($content).'</div>';
 
-    	return wpautop($genesis_column);
+    	return $genesis_column;
 
+	}
+
+	/**
+	 * Clear shortcode build
+	 *
+	 * @since 1.2.0
+	 */
+	public function clear_shortcode_build() {
+
+		$clear = '<span style="clear:both"></span>';
+
+		return $clear;
 	}
 
 	/**
@@ -123,7 +135,8 @@ class GingerBeard_Genesis_Shortcodes {
 	 * @since    1.0.0
 	 */
 	public function gingerbeard_genesis_shortcodes() {
-		add_shortcode('genesis_column', array( $this, 'gingerbeard_genesis_shortcode_build' ) );
+		add_shortcode( 'genesis_column', array( $this, 'gingerbeard_genesis_shortcode_build' ) );
+		add_shortcode( 'gb_clear', array( $this, 'clear_shortcode_build' ) );
 	}
 
 }
