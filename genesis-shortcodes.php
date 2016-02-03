@@ -3,7 +3,7 @@
  * Plugin Name:       GingerBeard Shortcodes
  * Plugin URI:        http://github.com/BeardedGinger/Genesis-Shortcodes
  * Description:       Adds basic shortcodes for columns that output the included column classes found in the Genesis Framework
- * Version:           1.1.1
+ * Version:           1.2.0
  * Author:            Josh Mallard
  * Author URI:        http://joshmallard.com
  * Text Domain:       gingerbeard-shortcodes
